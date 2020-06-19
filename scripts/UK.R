@@ -6,6 +6,7 @@ library(rlang)
 library(stringr)
 library(ini)
 library(qs)
+library(base)
 
 # Load requested settings from command line
 argv = commandArgs(trailingOnly = TRUE);

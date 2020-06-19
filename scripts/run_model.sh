@@ -33,12 +33,14 @@ for i in "$@"; do
     fi
 
     if [ "$i" == "--parameters" ] || [ "$i" == "--settings" ] || [ "$i" == "--coviduk" ] || [ "$i" == "--contact-matrices   " ]; then
-        RUNARGS = "${RUNARGS} $i ${i+1}"
+        RUNARGS="${RUNARGS} $i ${i+1}"
     fi
 
     if [ "$i" == "--dump" ]; then
-        RUNARGS = "${RUNARGS} $i"
+        RUNARGS="1 1 $i"
+        $EXE_R_SCRIPT $RUNARGS
+        exit 0
     fi
 done
-exit 0
+
 $EXE_R_SCRIPT $1 $2 $RUNARGS
